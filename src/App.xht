@@ -1,0 +1,57 @@
+<script>
+    import Router  from '@dififa/spa-router';
+
+    import Home from './Home.xht';
+    import About from './About.xht';
+    
+    let name = 'world';
+
+const componentCache = new Map(); // Cache for imported components
+// Helper function to load components with caching
+async function loadComponent(path, importer) {
+    if (componentCache.has(path)) {
+        // Return cached component if it exists
+        return componentCache.get(path);
+    }
+    // Import component and cache it
+    const component = await importer();
+    componentCache.set(path, component);
+    return component;
+}
+
+let cmp, params = {}, query = {};
+
+const router = new Router();
+
+router
+    .on('/', import("./Home.xht"))
+	.on('/about/:name', import("./About.xht"))
+	.on('/setting', import("./Setting.xht"))
+	.on("/users/:id", import("./Users.xht"))
+	.on("/posts/:postId/comments", import("./Posts.xht"))
+	.on404(import('./404.xht'))
+	.listen((matchedRoute) => {
+		({cmp, params, query} = matchedRoute);
+	});
+
+</script>
+
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about/me">About</a></li>
+    <li><a href="/setting?about=setting">Setting</a></li>
+    <li><a href="/users/123?active=true">User 123</a></li>
+    <li><a href="/posts/456/comments?sort=latest">Comments for Post 456</a></li>
+</ul>
+
+{#if cmp} 
+    <component:cmp {params} {query}/>
+{/if}
+
+<style>
+    h1 {
+        color: red;
+    }
+</style>
+
+

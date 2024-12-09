@@ -1,0 +1,16 @@
+{
+  "name": "malinajs-btemplate",
+  "module": "app.js",
+  "description": "A minimalistic version of MalinaJS template with Bun",
+  "author": "Yulmizar",
+  "scripts": {
+    "dev": "bun ./app.js -d",
+    "build": "bun ./app.js",
+    "serve": "bun ./app.js -s"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@dififa/malinajs-spa": "^0.1.1",
+    "@dififa/spa-router": "^0.1.0"
+  }
+}
