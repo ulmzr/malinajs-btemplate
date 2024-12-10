@@ -9,7 +9,7 @@
     "serve": "bun ./app.js -s"
   },
   "devDependencies": {
-    "@dififa/malinajs-spa": "^0.1.1",
+    "@dififa/malinajs-spa": "^0.1.3",
     "@dififa/spa-router": "^0.1.0"
   }
 }
