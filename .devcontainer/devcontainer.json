@@ -1,5 +1,7 @@
 {
   "image": "mcr.microsoft.com/vscode/devcontainers/base",
+  "postCreateCommand": "bun install && bun run build",
+  "postStartCommand": "bun run start",
   "features": {
     "ghcr.io/audacioustux/devcontainers/bun:1": {}
   },
