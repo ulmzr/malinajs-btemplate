@@ -416,6 +416,7 @@ __export(Home_exports, {
 var Home_default;
 var init_Home = __esm({
   "src/Home.xht"() {
+    "use strict";
     init_runtime();
     init_runtime();
     Home_default = ($option = {}) => {
@@ -435,6 +436,7 @@ __export(About_exports, {
 var About_default;
 var init_About = __esm({
   "src/About.xht"() {
+    "use strict";
     init_runtime();
     init_runtime();
     About_default = makeComponent(($option) => {
@@ -453,17 +455,18 @@ var init_About = __esm({
   }
 });
 
-// src/Setting.xht
-var Setting_exports = {};
-__export(Setting_exports, {
-  default: () => Setting_default
+// src/Settings.xht
+var Settings_exports = {};
+__export(Settings_exports, {
+  default: () => Settings_default
 });
-var Setting_default;
-var init_Setting = __esm({
-  "src/Setting.xht"() {
+var Settings_default;
+var init_Settings = __esm({
+  "src/Settings.xht"() {
+    "use strict";
     init_runtime();
     init_runtime();
-    Setting_default = makeComponent(($option) => {
+    Settings_default = makeComponent(($option) => {
       const $$apply = makeApply();
       let $props = $option.props || {};
       let { params } = $props;
@@ -485,6 +488,7 @@ __export(Users_exports, {
 var Users_default;
 var init_Users = __esm({
   "src/Users.xht"() {
+    "use strict";
     init_runtime();
     init_runtime();
     Users_default = ($option = {}) => {
@@ -504,6 +508,7 @@ __export(Posts_exports, {
 var Posts_default;
 var init_Posts = __esm({
   "src/Posts.xht"() {
+    "use strict";
     init_runtime();
     init_runtime();
     Posts_default = ($option = {}) => {
@@ -523,6 +528,7 @@ __export(__exports, {
 var __default;
 var init__ = __esm({
   "src/404.xht"() {
+    "use strict";
     init_runtime();
     init_runtime();
     __default = ($option = {}) => {
@@ -641,7 +647,7 @@ var App_default = makeComponent(($option) => {
   }
   let cmp, params = {}, query = {};
   const router = new spa_router_default();
-  router.on("/", Promise.resolve().then(() => (init_Home(), Home_exports))).on("/about/:name", Promise.resolve().then(() => (init_About(), About_exports))).on("/setting", Promise.resolve().then(() => (init_Setting(), Setting_exports))).on("/users/:id", Promise.resolve().then(() => (init_Users(), Users_exports))).on("/posts/:postId/comments", Promise.resolve().then(() => (init_Posts(), Posts_exports))).on404(Promise.resolve().then(() => (init__(), __exports))).listen((matchedRoute) => {
+  router.on("/", Promise.resolve().then(() => (init_Home(), Home_exports))).on("/about/:name", Promise.resolve().then(() => (init_About(), About_exports))).on("/setting", Promise.resolve().then(() => (init_Settings(), Settings_exports))).on("/users/:id", Promise.resolve().then(() => (init_Users(), Users_exports))).on("/posts/:postId/comments", Promise.resolve().then(() => (init_Posts(), Posts_exports))).on404(Promise.resolve().then(() => (init__(), __exports))).listen((matchedRoute) => {
     $$apply();
     ({ cmp, params, query } = matchedRoute);
   });

@@ -1,4 +1,4 @@
-import { mount } from "malinajs";
-import App from "./App.xht";
+import { mount } from 'malinajs'
+import App from './App.xht'
 
-mount(document.body, App);
+mount(document.body, App)
