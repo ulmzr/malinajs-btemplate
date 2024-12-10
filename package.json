@@ -1,5 +1,5 @@
 {
-  "name": "malinajs-btemplate",
+  "name": "malinajs-demo",
   "module": "app.js",
   "description": "A minimalistic version of MalinaJS template with Bun",
   "author": "Yulmizar",
